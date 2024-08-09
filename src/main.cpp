@@ -377,7 +377,7 @@ void setup() {
 
     joy_update();
 
-    StickMode = 2;
+    
     // if(getOptionButton())
     // {
     //   StickMode = 3;
@@ -391,16 +391,19 @@ void setup() {
 
     lvgl_init();
 
-    if (StickMode == 3) {
+    StickMode = STICK_MODE;
+    if (StickMode == MODE1) {
         THROTTLE      = RIGHTY;
-        AILERON       = LEFTX;
+        AILERON       = RIGHTX;
         ELEVATOR      = LEFTY;
-        RUDDER        = RIGHTX;
+        RUDDER        = LEFTX;
         ARM_BUTTON    = RIGHT_STICK_BUTTON;
         FLIP_BUTTON   = LEFT_STICK_BUTTON;
         MODE_BUTTON   = RIGHT_BUTTON;
         OPTION_BUTTON = LEFT_BUTTON;
-    } else {
+    } 
+
+    else if (StickMode == MODE2) {
         THROTTLE      = LEFTY;
         AILERON       = RIGHTX;
         ELEVATOR      = RIGHTY;
@@ -410,6 +413,16 @@ void setup() {
         MODE_BUTTON   = RIGHT_BUTTON;
         OPTION_BUTTON = LEFT_BUTTON;
     }
+    else if (StickMode == MODE3) {
+        THROTTLE      = RIGHTY;
+        AILERON       = LEFTX;
+        ELEVATOR      = LEFTY;
+        RUDDER        = RIGHTX;
+        ARM_BUTTON    = RIGHT_STICK_BUTTON;
+        FLIP_BUTTON   = LEFT_STICK_BUTTON;
+        MODE_BUTTON   = RIGHT_BUTTON;
+        OPTION_BUTTON = LEFT_BUTTON;
+    } 
 
     byte error, address;
     int nDevices;

@@ -34,6 +34,12 @@ extern M5GFX display;
 #define LOG_MODE          4
 #define AUTO_LANDING_MODE 5
 
+#define STICK_MODE 2
+
+#define MODE1 1
+#define MODE2 2
+#define MODE3 3
+
 extern uint8_t StickMode;
 extern uint8_t AltMode;
 extern uint8_t Mode;
